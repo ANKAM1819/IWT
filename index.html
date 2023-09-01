@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            position: relative;
+            padding: 20px;
+            border: 1px solid #ced4da;
+            width: 450px;
+            height: 450px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+        .profile-photo {
+            position: absolute;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #343a40;
+        }
+        hr {
+            margin: 15px 0;
+            border: none;
+            border-top: 1px solid #ced4da;
+        }
+        p {
+            font-size: 18px;
+            color: #6c757d;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #eb9dd1;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;   
+            margin: 5px 0;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            transform: scale(1);
+            margin-left: 155px;
+            margin-bottom: 10px;
+        }
+    
+        button:hover {
+            background-color: #070808;
+            transform: scale(1.05);
+        }
+        title{
+           
+            color: #eb9dd1;
+            font-size: 10px;
+        }
+    </style> 
+</head>
+<body>
+    <div class="container">
+        <img class="profile-photo" src="assets/images/Ankam.png" alt="Profile Photo">
+        <h2>Name: ANKAM SRINIVAS</h2> 
+        <hr>
+        <p>Registration Number: 21MIS7009</p>
+        <hr>
+        <button title="Navigation Bar" onclick="window.location.href='ass-1/Navmenu.html'">Assignment-1</button><br>
+        <button title="Responsive Layout " onclick="window.location.href='ass-2/Task 2.html'">Assignment-2</button><br>
+        <button title="Layouts" onclick="window.location.href='ass-3/Layouts.html'">Assignment-3</button><br>
+        <button title="Calculator" onclick="window.location.href='ass-4/calci.html'">Assignment-4</button><br>
+        <button title="Analog Clock" onclick="window.location.href='ass-5/clock.html'">Assignment-5</button><br>
+        <button title="Image Slider" onclick="window.location.href='ass-6/image_slider.html'">Assignment-6</button><br>
+    </div>
+</body>
+</html>

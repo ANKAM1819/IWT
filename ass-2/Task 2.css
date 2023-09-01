@@ -1,0 +1,51 @@
+
+
+body { 
+  margin: 0; 
+  padding: 0;
+}
+   
+  .image-row {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center; 
+
+    align-items: center; 
+    gap: 2px; 
+     
+  } 
+  
+  img {
+    max-width: 450px;
+    height: 450px; 
+    flex-basis: calc(33.33% - 20px);  
+  }
+  
+  @media only screen and  (max-width:500px) { 
+    
+    body{
+        background-color:yellow; 
+    }
+} 
+
+@media only screen and (min-width: 501px) and (max-width:700px) {
+  body{
+    background-color: plum;
+}
+}
+
+@media only screen and (min-width: 701px) and (max-width:1000px) {
+  body{
+    background-color:aqua;
+}
+}
+
+@media only screen and (min-width: 1050px) {
+  body{
+    background-color: greenyellow;
+}
+  }
+
+
+
+

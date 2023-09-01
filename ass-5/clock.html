@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+            integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
+            integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle, rgb(139, 208, 240), rgb(249, 178, 217));
+            opacity: 20px;
+        }
+
+        .clock {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            background-color: rgb(141, 26, 36);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, #280377, #e2ecee);
+        }
+
+        .clock::before {
+            content: "";
+            width: 525px;
+            height: 525px;
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(#00d9ff, #ee00ff);
+            box-shadow: 0 0 15px 15px rgb(12, 12, 12);
+            z-index: -1;
+        }
+
+        .number {
+            transform: rotate(calc(30deg * var(--n)));
+            position: absolute;
+            text-align: center;
+            inset: 10px;
+            font-size: 20px;
+            color: rgb(247, 243, 243);
+            text-shadow: 0 0 10px rgb(14, 15, 15);
+            opacity:12px;
+        }
+
+        .number b {
+            transform: rotate(calc(-30deg * var(--n)));
+            display: inline-block;
+        }
+
+        .center-dot {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: rgb(237, 244, 240);
+            border: 6px solid rgb(234, 109, 169);
+            border-radius: 50%;
+        }
+
+        .hour-hand, .minute-hand, .second-hand {
+            --rotate: 0;
+            position: absolute;
+            left: 50%;
+            bottom: 50%;
+            transform: translate(-50%) rotate(calc(var(--rotate) * 1deg));
+            transform-origin: bottom;
+            border-radius: 30px 30px 0 0;
+            
+        }
+
+        .hour-hand {
+            width: 12px;
+            height: 130px;
+            background: linear-gradient(blue, pink);
+        }
+
+        .minute-hand {
+            width: 12px;
+            height: 190px;
+            background: linear-gradient(blue, pink);
+        }
+
+        .second-hand {
+            width: 6px;
+            height: 210px;
+            background: linear-gradient(blue, pink);
+        }
+        h1{
+            transform: translateY(-140px);
+            color: rgb(61, 196, 241);
+            text-shadow: 0 0 15px black;
+            letter-spacing: 10px;
+        }
+        audio{
+            display: none;
+        } 
+    </style>
+</head>
+<body>
+<div class="clock">
+    <h1>ANKAM</h1>
+    <div class="number" style="--n:1"><b>1</b></div>
+    <div class="number" style="--n:1.2"><b>.</b></div>
+    <div class="number" style="--n:1.4"><b>.</b></div>
+    <div class="number" style="--n:1.6"><b>.</b></div>
+    <div class="number" style="--n:1.8"><b>.</b></div>
+    <div class="number" style="--n:2"><b>2</b></div>
+    <div class="number" style="--n:2.2"><b>.</b></div>
+    <div class="number" style="--n:2.4"><b>.</b></div>
+    <div class="number" style="--n:2.6"><b>.</b></div>
+    <div class="number" style="--n:2.8"><b>.</b></div>
+    <div class="number" style="--n:3"><b>3</b></div>
+    <div class="number" style="--n:3.2"><b>.</b></div>
+    <div class="number" style="--n:3.4"><b>.</b></div>
+    <div class="number" style="--n:3.6"><b>.</b></div>
+    <div class="number" style="--n:3.8"><b>.</b></div>
+    <div class="number" style="--n:4"><b>4</b></div>
+    <div class="number" style="--n:4.2"><b>.</b></div>
+    <div class="number" style="--n:4.4"><b>.</b></div>
+    <div class="number" style="--n:4.6"><b>.</b></div>
+    <div class="number" style="--n:4.8"><b>.</b></div>
+    <div class="number" style="--n:5"><b>5</b></div>
+    <div class="number" style="--n:5.2"><b>.</b></div>
+    <div class="number" style="--n:5.4"><b>.</b></div>
+    <div class="number" style="--n:5.6"><b>.</b></div>
+    <div class="number" style="--n:5.8"><b>.</b></div>
+    <div class="number" style="--n:6"><b>6</b></div>
+    <div class="number" style="--n:6.2"><b>.</b></div>
+    <div class="number" style="--n:6.4"><b>.</b></div>
+    <div class="number" style="--n:6.6"><b>.</b></div>
+    <div class="number" style="--n:6.8"><b>.</b></div>
+    <div class="number" style="--n:7"><b>7</b></div>
+    <div class="number" style="--n:7.2"><b>.</b></div>
+    <div class="number" style="--n:7.4"><b>.</b></div>
+    <div class="number" style="--n:7.6"><b>.</b></div>
+    <div class="number" style="--n:7.8"><b>.</b></div>
+    <div class="number" style="--n:8"><b>8</b></div>
+    <div class="number" style="--n:8.2"><b>.</b></div>
+    <div class="number" style="--n:8.4"><b>.</b></div>
+    <div class="number" style="--n:8.6"><b>.</b></div>
+    <div class="number" style="--n:8.8"><b>.</b></div>
+    <div class="number" style="--n:9"><b>9</b></div>
+    <div class="number" style="--n:9.2"><b>.</b></div>
+    <div class="number" style="--n:9.4"><b>.</b></div>
+    <div class="number" style="--n:9.6"><b>.</b></div>
+    <div class="number" style="--n:9.8"><b>.</b></div>
+    <div class="number" style="--n:10"><b>10</b></div>
+    <div class="number" style="--n:10.2"><b>.</b></div>
+    <div class="number" style="--n:10.4"><b>.</b></div>
+    <div class="number" style="--n:10.6"><b>.</b></div>
+    <div class="number" style="--n:10.8"><b>.</b></div>
+    <div class="number" style="--n:11"><b>11</b></div>
+    <div class="number" style="--n:11.2"><b>.</b></div>
+    <div class="number" style="--n:11.4"><b>.</b></div>
+    <div class="number" style="--n:11.6"><b>.</b></div>
+    <div class="number" style="--n:11.8"><b>.</b></div>
+    <div class="number" style="--n:12"><b>12</b></div>
+    <div class="number" style="--n:12.2"><b>.</b></div>
+    <div class="number" style="--n:12.4"><b>.</b></div>
+    <div class="number" style="--n:12.6"><b>.</b></div>
+    <div class="number" style="--n:12.8"><b>.</b></div>
+    <div class="hour-hand" id="hour-hand"></div>
+    <div class="minute-hand" id="minute-hand"></div>
+    <div class="second-hand" id="second-hand"></div>
+    <div class="center-dot"></div>
+    
+    <audio id="tick-sound" controls>
+        <source src="tik.mp3" type="audio/mpeg">
+    </audio>
+</div>
+<script>
+    const secondHand = document.getElementById('second-hand');
+    const minuteHand = document.getElementById('minute-hand');
+    const hourHand = document.getElementById('hour-hand');
+    const tickSound = document.getElementById('tick-sound'); // Get the audio element
+
+    function clockTick() {
+        const date = new Date();
+        const seconds = date.getSeconds() / 60;
+        const minutes = (seconds + date.getMinutes()) / 60;
+        const hours = (minutes + date.getHours()) / 12;
+
+        rotateClockHand(secondHand, seconds);
+        rotateClockHand(minuteHand, minutes);
+        rotateClockHand(hourHand, hours);
+
+        // Play the tick sound
+        tickSound.play();
+    }
+
+    function rotateClockHand(element, rotation) {
+        element.style.setProperty('--rotate', rotation * 360);
+    }
+
+    setInterval(clockTick, 1000);
+</script>
+</body>
+</html>  

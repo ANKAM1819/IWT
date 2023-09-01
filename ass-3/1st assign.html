@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            body{
+                margin:auto;    
+            }
+            #con{
+                display: grid;
+                grid-template-areas: 'a1 a1 a1 a1 a1  '
+                ' b1 b1 b1 c1 d1'
+                'e1  e1 e1 e1 e1';
+                grid-gap: 10px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                margin-left: 50px;
+                margin-right: 50px;
+               
+                
+            }
+            .c{
+                border: 1px solid black;
+                text-align: center;
+                font-size: 20px;
+                background-color: yellow;
+                
+                
+                
+                
+            }
+            #a{
+                grid-area: a1;
+                height: 100px;
+            }
+            #b{
+                grid-area: b1;
+                height: 400px;
+            }
+            #c{
+                grid-area: c1;
+                height: 400px;
+            }
+            #d{
+                grid-area: d1;
+                height: 400px;
+            }
+            #e{
+                grid-area: e1;
+                height: 100px;
+            }
+            
+        </style>
+        <body>
+        <div id="con">
+            <div class="c" id="a">Header</div>
+            <div class="c" id="b">Article</div>
+            <div class="c" id="c">Nav</div>
+            <div class="c" id="d">Ads</div>
+            <div class="c" id="e">Footer</div>
+        </div>
+    </head>
+</body>
+</html>

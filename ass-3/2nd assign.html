@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <style>
+            body{
+                margin:auto;   
+            }
+            #con{ 
+                display: grid;
+                grid-template-areas: 'a1 a1 a1 a1 a1 '
+                'b1 b1 c1 c1 c1'
+                'b1 b1 d1 e1 f1'
+                'b1 b1 g1 g1 g1'; 
+                grid-gap: 10px; 
+                margin-top: 100px;
+                margin-bottom: 30px;
+                margin-left: 30px;
+                margin-right: 30px;
+               
+            }
+            .c{
+                border: 3px solid black;
+                text-align: center;
+                font-size: 20px; 
+            }
+            #a{
+                grid-area: a1;
+                height:100px;
+                background-color: lightgreen;
+                
+            }
+            #b{
+                grid-area: b1;
+                height:400px;
+                background-color: lightblue;  
+            }
+            #c{ 
+                grid-area: c1;
+                height:150px;
+                background-color: skyblue;
+              
+            }
+            #d{
+                grid-area: d1;
+                height:100px;
+                background-color: lightgrey;
+               
+            }
+            #e{
+                grid-area: e1;
+                height:100px;
+                background-color: lightsalmon;
+                
+            }
+            #f{
+                grid-area: f1;
+                height:100px;
+                background-color: lightseagreen;
+            }
+            #g{
+                grid-area: g1;
+                height:110px;
+                background-color: pink;
+                
+            }
+            
+        </style>
+        <body>
+        <div id="con">
+            <div class="c" id="a">Navbar</div>
+            <div class="c" id="b">Sidebar</div>
+            <div class="c" id="c">Main</div>
+            <div class="c" id="d">Content-1</div>
+            <div class="c" id="e">Content-2</div>
+            <div class="c" id="f">Content-3</div>
+            <div class="c" id="g">Footer</div>
+        </div>
+    </head>
+</body>
+</html>
